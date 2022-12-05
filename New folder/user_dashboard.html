@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <title>Dashboard</title>
+  <style type="text/css">
+    .message_container{
+      margin: 20px;
+      width: 400px;
+      box-sizing:border-box;
+      padding: 20px;
+      background-color: #333;
+      color: #fff;
+      display: block;
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body style="background-image: url('assets/img/intro-bg.jpg');background-size: 100%;">
+  <div id="dashboard_navbar">
+    <a href="https://siddheshsanghavitesthostingpackage-com.stackstaging.com/10-MVC/" style="text-decoration: none;color: white;margin-right: 0px;font-size: 2em; margin-left: 2em; "><strong>WELLVERSE</strong></a>
+    <!-- Button trigger modal -->
+    <button type="button" class="btn btn-primary btn-lg float-right" id="showallmytweets" style="color:white;background-color: transparent;background-repeat: no-repeat;
+    border: none;
+    cursor: pointer;
+    overflow: hidden;
+    outline: none;font-size: medium;">MY MESSAGES</button>
+    <button type="button" class="btn btn-primary btn-lg float-right" data-toggle="modal" data-target="#adduserModal" style="color:white;background-color: transparent;background-repeat: no-repeat;
+    border: none;
+    cursor: pointer;
+    overflow: hidden;
+    outline: none;font-size: medium;">ADD USER</button>
+    <button type="button" class="btn btn-primary btn-lg float-right" data-toggle="modal" data-target="#userMoal" id="getuserlist"style="color:white;background-color: transparent;background-repeat: no-repeat;
+    border: none;
+    cursor: pointer;
+    overflow: hidden;
+    outline: none;font-size: medium;">USER LIST</button>
+    <button type="button" class="btn btn-primary btn-lg float-right" data-toggle="modal" data-target="#exampleModal" style="color:white;background-color: transparent;background-repeat: no-repeat;
+    border: none;
+    cursor: pointer;
+    overflow: hidden;
+    outline: none;font-size: medium;">SHARE IT!</button>
+    <button type="button" class="btn btn-primary btn-lg float-right" data-toggle="modal" data-target=".bd-example-modal-lg" id="pedingrequests" style="color:white;background-color: transparent;background-repeat: no-repeat;
+    border: none;
+    cursor: pointer;
+    overflow: hidden;
+    outline: none;font-size: medium;">REQUESTS</button>
+    <button type="button" class="btn btn-primary btn-lg float-right" id="dashboard_logout" style="color:white;background-color: transparent;background-repeat: no-repeat;
+    border: none;
+    cursor: pointer;
+    overflow: hidden;
+    outline: none;font-size: medium;">LOGOUT</button>
+  </div>
+  <div id="dashboard_body">
+    <?php echo($dashboard_messages); ?>
+  </div>
+
+  <!--Request Modal Body-->
+  <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel3">Request Bar</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body" id="request_modal_body">
+          
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Add user modal body -->
+  <div class="modal fade" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" id="adduserModal">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel2">Followers Bar</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <div id="addfollowerbar">
+            <div id="addfollowerbar_header">
+              <h5>Add Follower</h5>
+            </div>
+            <div id="addfollowerbar_body">
+              <label for="addfollower">Type the username:</label><br>
+              <input type="text" id="addfollower" name="addfollower"><br>
+              <div id="addfollowerbar_body_message"></div>
+            </div>
+            <div id="addfollowerbar_footer">
+              <button id="addfollowerbar_footer_search">Search</button>
+              <button id="addfollowerbar_footer_Add" disabled="true">Add</button>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!--Get user Modal-->
+  <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true" id="userMoal">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel2">Followers Bar</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body" id="user_list_modal_body">
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Pings</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <label for="text_area">Message:</label><br>
+          <textarea id="text_area" name="text_area" rows="4" cols="50" placeholder="Share it with your ones"></textarea><br>
+          <div id="message"></div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary" id="share_message">Share</button>
+        </div>
+      </div>
+    </div>
+  </div>

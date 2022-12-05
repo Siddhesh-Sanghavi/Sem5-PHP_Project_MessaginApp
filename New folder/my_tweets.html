@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <title>MyPings</title>
+    <style type="text/css">
+        .message_container{
+            margin: 20px;
+            width: 400px;
+            box-sizing:border-box;
+            padding: 20px;
+            background-color: #333;
+            color: #fff;
+            display: block;
+            text-decoration: none;
+        }
+    </style>
+    </head>
+    <body style="background-image: url('assets/img/intro-bg.jpg'); background-size: cover;">
+        <div id="mytweets_navbar">
+            <a href="https://siddheshsanghavitesthostingpackage-com.stackstaging.com/10-MVC/" style="text-decoration: none;color: white;margin-right: 0px;font-size: 2em; margin-left: 2em; "><strong>WELLVERSE</strong></a>
+            <!-- Button trigger modal -->
+            <button id="back_to_dashboard" class="btn btn-primary btn-lg float-right" style="color:white;background-color: transparent;background-repeat: no-repeat;
+            border: none;
+            cursor: pointer;
+            overflow: hidden;
+            outline: none;font-size: medium;">DASHBOARD</button>
+            <button id="dashboard_logout" class="btn btn-primary btn-lg float-right"style="color:white;background-color: transparent;background-repeat: no-repeat;
+            border: none;
+            cursor: pointer;
+            overflow: hidden;
+            outline: none;font-size: medium;">LOGOUT</button>
+        </div>
+        <div id="mytweets_body">
+            <?php echo $data;  ?>
+        </div>
